@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/primitives/Container.astro';
+import Section from '../components/primitives/Section.astro';
+import Heading from '../components/primitives/Heading.astro';
+import Button from '../components/primitives/Button.astro';
+---
+
+<BaseLayout title="Pagina no encontrada" noindex>
+  <Section spacing="lg">
+    <Container size="narrow" class="text-center">
+      <p class="font-display text-accent text-7xl font-semibold">404</p>
+      <Heading as="h1" size="sm" class="mt-4">
+        Esta pagina no existe
+      </Heading>
+      <p class="text-content-muted mt-4">
+        Puede que el enlace este mal escrito o que la pagina haya sido movida.
+      </p>
+      <Button href="/" class="mt-8">
+        Volver al inicio
+      </Button>
+    </Container>
+  </Section>
+</BaseLayout>

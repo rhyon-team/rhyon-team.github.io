@@ -1,17 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import EjemploIsla from '../components/EjemploIsla.jsx';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/primitives/Container.astro';
+import Section from '../components/primitives/Section.astro';
+import Heading from '../components/primitives/Heading.astro';
+import Button from '../components/primitives/Button.astro';
 ---
 
-<Layout title="RHYON">
-  <main class="min-h-screen flex items-center justify-center p-8">
-    <div class="text-center space-y-4">
-      <h1 class="text-4xl font-bold tracking-tight">RHYON</h1>
-      <p class="text-gray-500">Estructura base lista. La landing todavia no fue construida.</p>
-
-      <!-- Isla React de ejemplo: valida que la integracion funciona.
-           Borrar junto con src/components/EjemploIsla.jsx al empezar la landing. -->
-      <EjemploIsla client:visible />
-    </div>
-  </main>
-</Layout>
+<BaseLayout>
+  <Section spacing="lg">
+    <Container size="narrow" class="text-center">
+      <p class="text-accent text-sm font-medium tracking-[0.2em] uppercase">
+        Proyecto inicializado
+      </p>
+      <Heading as="h1" size="lg" class="mt-5">
+        RHYON
+      </Heading>
+      <p class="text-content-muted mx-auto mt-6 max-w-xl text-lg">
+        El boilerplate esta listo. Esta pagina es un marcador de posicion y debe reemplazarse
+        por la landing.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <Button href="/styleguide" variant="primary">
+          Ver el sistema de diseño
+        </Button>
+        <Button href="https://github.com/rhyon-team/rhyon-team.github.io" variant="outline">
+          Repositorio
+        </Button>
+      </div>
+    </Container>
+  </Section>
+</BaseLayout>

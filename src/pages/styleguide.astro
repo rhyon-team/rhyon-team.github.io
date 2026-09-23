@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/primitives/Container.astro';
+import Section from '../components/primitives/Section.astro';
+import Heading from '../components/primitives/Heading.astro';
+import Button from '../components/primitives/Button.astro';
+
+/**
+ * Referencia viva del sistema de diseño.
+ *
+ * Se genera desde los mismos tokens que usa el sitio, asi que nunca queda
+ * desactualizada. Excluida de buscadores via noindex y robots.txt.
+ *
+ * Las clases de color se escriben completas (bg-brand-800 y no `bg-brand-${n}`)
+ * porque Tailwind analiza el codigo como texto y no resuelve interpolaciones.
+ */
+
+const brandScale = [
+  { step: 50, class: 'bg-brand-50' },
+  { step: 100, class: 'bg-brand-100' },
+  { step: 200, class: 'bg-brand-200' },
+  { step: 300, class: 'bg-brand-300' },
+  { step: 400, class: 'bg-brand-400' },
+  { step: 500, class: 'bg-brand-500' },
+  { step: 600, class: 'bg-brand-600' },
+  { step: 700, class: 'bg-brand-700' },
+  { step: 800, class: 'bg-brand-800' },
+  { step: 900, class: 'bg-brand-900' },
+  { step: 950, class: 'bg-brand-950' },
+];
+
+const sandScale = [
+  { step: 50, class: 'bg-sand-50' },
+  { step: 100, class: 'bg-sand-100' },
+  { step: 200, class: 'bg-sand-200' },
+  { step: 300, class: 'bg-sand-300' },
+  { step: 400, class: 'bg-sand-400' },
+  { step: 500, class: 'bg-sand-500' },
+  { step: 600, class: 'bg-sand-600' },
+  { step: 700, class: 'bg-sand-700' },
+  { step: 800, class: 'bg-sand-800' },
+  { step: 900, class: 'bg-sand-900' },
+  { step: 950, class: 'bg-sand-950' },
+];
+
+const semantic = [
+  { name: 'surface', class: 'bg-surface', note: 'Fondo de pagina' },
+  { name: 'surface-raised', class: 'bg-surface-raised', note: 'Tarjetas' },
+  { name: 'surface-sunken', class: 'bg-surface-sunken', note: 'Secciones alternas' },
+  { name: 'surface-inverse', class: 'bg-surface-inverse', note: 'Bloques oscuros' },
+  { name: 'accent', class: 'bg-accent', note: 'Acciones principales' },
+  { name: 'accent-soft', class: 'bg-accent-soft', note: 'Fondos teñidos' },
+  { name: 'line', class: 'bg-line', note: 'Bordes' },
+  { name: 'success', class: 'bg-success', note: 'Confirmaciones' },
+  { name: 'warning', class: 'bg-warning', note: 'Advertencias' },
+];
+
+const typeScale = [
+  { token: 'display-xl', class: 'text-display-xl', use: 'Hero principal' },
+  { token: 'display-lg', class: 'text-display-lg', use: 'Titulo de pagina' },
+  { token: 'display-md', class: 'text-display-md', use: 'Titulo de seccion' },
+  { token: 'display-sm', class: 'text-display-sm', use: 'Subseccion' },
+];
+
+const shadows = [
+  { name: 'xs', class: 'shadow-xs' },
+  { name: 'sm', class: 'shadow-sm' },
+  { name: 'md', class: 'shadow-md' },
+  { name: 'lg', class: 'shadow-lg' },
+  { name: 'xl', class: 'shadow-xl' },
+];
+
+const radii = [
+  { name: 'xs', class: 'rounded-xs' },
+  { name: 'sm', class: 'rounded-sm' },
+  { name: 'md', class: 'rounded-md' },
+  { name: 'lg', class: 'rounded-lg' },
+  { name: 'xl', class: 'rounded-xl' },
+  { name: '2xl', class: 'rounded-2xl' },
+];
+
+const variants = ['primary', 'secondary', 'outline', 'ghost', 'link'] as const;
+---
+
+<BaseLayout title="Sistema de diseño" noindex>
+  <Section spacing="sm">
+    <Container>
+      <Heading as="h1" size="md">
+        Sistema de diseño
+      </Heading>
+      <p class="text-content-muted mt-4 max-w-2xl">
+        Referencia de los tokens definidos en
+        <code class="font-mono text-sm">src/styles/tokens.css</code>. Se genera desde los
+        mismos valores que consume el sitio, por lo que refleja siempre el estado real del
+        sistema.
+      </p>
+    </Container>
+  </Section>
+
+  <Section spacing="sm">
+    <Container>
+      <Heading as="h2" size="sm">
+        Marca — Rojo Torino
+      </Heading>
+      <p class="text-content-muted mt-3 text-sm">
+        El paso <strong>800</strong> es el color del logo. Los claros sirven de fondo; los
+        oscuros, de texto sobre fondo claro.
+      </p>
+      <div class="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
+        {brandScale.map((c) => (
+          <div>
+            <div
+              class:list={[
+                'h-20 rounded-lg border',
+                c.step === 800
+                  ? 'border-content ring-accent ring-2 ring-offset-2'
+                  : 'border-line',
+                c.class,
+              ]}
+            />
+            <p class="mt-2 font-mono text-xs">brand-{c.step}</p>
+            {c.step === 800 && <p class="text-accent text-xs font-medium">logo</p>}
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm">
+    <Container>
+      <Heading as="h2" size="sm">
+        Neutros — Arena
+      </Heading>
+      <p class="text-content-muted mt-3 text-sm">
+        Grises calidos. Un gris frio junto al granata se percibe apagado.
+      </p>
+      <div class="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
+        {sandScale.map((c) => (
+          <div>
+            <div class:list={['border-line h-20 rounded-lg border', c.class]} />
+            <p class="mt-2 font-mono text-xs">sand-{c.step}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm">
+    <Container>
+      <Heading as="h2" size="sm">
+        Tokens semanticos
+      </Heading>
+      <p class="text-content-muted mt-3 text-sm">
+        Los componentes usan estos, no la paleta cruda. Cambian solos segun el tema.
+      </p>
+      <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {semantic.map((t) => (
+          <div class="border-line flex items-center gap-3 rounded-lg border p-3">
+            <div class:list={['border-line h-11 w-11 shrink-0 rounded-md border', t.class]} />
+            <div class="min-w-0">
+              <p class="truncate font-mono text-xs">{t.name}</p>
+              <p class="text-content-subtle truncate text-xs">{t.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm" tone="sunken">
+    <Container>
+      <Heading as="h2" size="sm">
+        Tipografia
+      </Heading>
+      <div class="mt-8 space-y-8">
+        {typeScale.map((t) => (
+          <div class="border-line border-b pb-6">
+            <div class="text-content-subtle flex flex-wrap gap-x-4 font-mono text-xs">
+              <span>{t.token}</span>
+              <span>{t.use}</span>
+            </div>
+            <p class:list={['font-display mt-2 font-semibold', t.class]}>Rojo Torino</p>
+          </div>
+        ))}
+        <div>
+          <p class="text-content-subtle font-mono text-xs">base — Inter</p>
+          <p class="text-content-muted mt-2 max-w-2xl">
+            El cuerpo de texto usa Inter. Esta pensada para tamaños chicos y mantiene la
+            legibilidad en parrafos largos, que es donde una serif de titulos empieza a cansar.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm">
+    <Container>
+      <Heading as="h2" size="sm">
+        Botones
+      </Heading>
+      <div class="mt-6 space-y-6">
+        <div>
+          <p class="text-content-subtle mb-3 font-mono text-xs">variantes</p>
+          <div class="flex flex-wrap items-center gap-3">
+            {variants.map((v) => (
+              <Button variant={v}>{v}</Button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p class="text-content-subtle mb-3 font-mono text-xs">tamaños</p>
+          <div class="flex flex-wrap items-center gap-3">
+            <Button size="sm">sm</Button>
+            <Button size="md">md</Button>
+            <Button size="lg">lg</Button>
+          </div>
+        </div>
+        <div>
+          <p class="text-content-subtle mb-3 font-mono text-xs">deshabilitado</p>
+          <Button disabled>No disponible</Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm" tone="sunken">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <Heading as="h2" size="sm">
+            Sombras
+          </Heading>
+          <p class="text-content-muted mt-3 text-sm">
+            Tintadas con granata en vez de negro: se integran mejor sobre crema.
+          </p>
+          <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {shadows.map((s) => (
+              <div class:list={['bg-surface-raised rounded-lg p-5 text-center', s.class]}>
+                <span class="font-mono text-xs">{s.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <Heading as="h2" size="sm">
+            Radios
+          </Heading>
+          <p class="text-content-muted mt-3 text-sm">Escala de redondeo de esquinas.</p>
+          <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {radii.map((r) => (
+              <div
+                class:list={[
+                  'bg-accent-soft border-accent/20 border p-5 text-center',
+                  r.class,
+                ]}
+              >
+                <span class="font-mono text-xs">{r.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</BaseLayout>
