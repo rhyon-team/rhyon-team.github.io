@@ -1,0 +1,44 @@
+---
+import { cn } from '../../lib/cn';
+import { buttonVariants, type ButtonVariants } from './button';
+
+interface Props extends ButtonVariants {
+  /** Si viene href renderiza <a>; si no, <button>. */
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  href,
+  type = 'button',
+  variant,
+  size,
+  full,
+  disabled,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const classes = cn(buttonVariants({ variant, size, full }), className);
+
+// Los enlaces externos se abren en pestaña nueva, con rel de seguridad.
+const isExternal = href?.startsWith('http');
+---
+
+{href ? (
+  <a
+    href={href}
+    class={classes}
+    {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+    {...rest}
+  >
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes} disabled={disabled} {...rest}>
+    <slot />
+  </button>
+)}

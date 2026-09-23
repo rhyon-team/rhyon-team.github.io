@@ -1,0 +1,32 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  /** Espaciado vertical. Mantiene el ritmo consistente entre secciones. */
+  spacing?: 'none' | 'sm' | 'md' | 'lg';
+  /** Fondo. Alternar entre secciones crea separacion sin lineas duras. */
+  tone?: 'default' | 'sunken' | 'accent' | 'inverse';
+  id?: string;
+  class?: string;
+}
+
+const { spacing = 'md', tone = 'default', id, class: className } = Astro.props;
+
+const spacings = {
+  none: '',
+  sm: 'py-12 sm:py-16',
+  md: 'py-20 sm:py-28',
+  lg: 'py-28 sm:py-40',
+};
+
+const tones = {
+  default: 'bg-surface text-content',
+  sunken: 'bg-surface-sunken text-content',
+  accent: 'bg-accent-soft text-content',
+  inverse: 'bg-surface-inverse text-content-inverse',
+};
+---
+
+<section id={id} class={cn(spacings[spacing], tones[tone], className)}>
+  <slot />
+</section>

@@ -1,0 +1,27 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  /** Nivel semantico. Define el tag, no el tamaño visual. */
+  as?: 'h1' | 'h2' | 'h3' | 'h4';
+  /**
+   * Tamaño visual, independiente del nivel. Permite un h2 grande o un h1
+   * chico sin romper la jerarquia del documento para lectores de pantalla.
+   */
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const { as: Tag = 'h2', size = 'md', class: className } = Astro.props;
+
+const sizes = {
+  sm: 'text-display-sm',
+  md: 'text-display-md',
+  lg: 'text-display-lg',
+  xl: 'text-display-xl',
+};
+---
+
+<Tag class={cn('font-display font-semibold text-balance', sizes[size], className)}>
+  <slot />
+</Tag>

@@ -1,0 +1,24 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  /** Ancho maximo del contenido. */
+  size?: 'narrow' | 'default' | 'wide' | 'full';
+  /** Tag a renderizar. Union acotada: Astro necesita literales para el tag dinamico. */
+  as?: 'div' | 'section' | 'article' | 'main' | 'header' | 'footer' | 'nav';
+  class?: string;
+}
+
+const { size = 'default', as: Tag = 'div', class: className } = Astro.props;
+
+const sizes = {
+  narrow: 'max-w-3xl', // texto largo: ~65 caracteres por linea
+  default: 'max-w-6xl', // grillas y secciones estandar
+  wide: 'max-w-7xl', // secciones de ancho amplio
+  full: 'max-w-none',
+};
+---
+
+<Tag class={cn('mx-auto w-full px-5 sm:px-8', sizes[size], className)}>
+  <slot />
+</Tag>
