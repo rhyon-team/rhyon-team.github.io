@@ -5,7 +5,6 @@ import { cva, type VariantProps } from 'class-variance-authority';
  * la pueda reutilizar tambien un componente React (isla) sin duplicar clases.
  */
 export const buttonVariants = cva(
-  // Base comun a todas las variantes.
   [
     'inline-flex items-center justify-center gap-2',
     'font-medium whitespace-nowrap',

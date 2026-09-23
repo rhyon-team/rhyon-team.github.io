@@ -7,7 +7,6 @@ import { site, social, contact } from './site';
  * sociales son una misma entidad. Referencia: https://schema.org/Organization
  */
 export function organizationSchema() {
-  // Solo los perfiles efectivamente cargados en site.ts.
   const sameAs = Object.values(social).filter((url) => url.length > 0);
 
   return {

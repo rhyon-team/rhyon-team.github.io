@@ -31,3 +31,6 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+
+# claude code (config del equipo se versiona; lo personal no)
+.claude/settings.local.json

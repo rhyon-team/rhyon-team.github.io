@@ -15,7 +15,6 @@ interface Props {
 export default function MobileNav({ items = [] }: Props) {
   const [open, setOpen] = useState(false);
 
-  // Bloquea el scroll del fondo mientras el menu esta abierto.
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -23,7 +22,6 @@ export default function MobileNav({ items = [] }: Props) {
     };
   }, [open]);
 
-  // Escape cierra el menu.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
