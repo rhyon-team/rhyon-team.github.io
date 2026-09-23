@@ -1,0 +1,12 @@
+# Normalizar finales de linea: LF en el repositorio, sin importar el SO.
+# Evita diffs falsos entre Windows y el runner Linux de GitHub Actions.
+* text=auto eol=lf
+
+# Binarios: no tocar.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

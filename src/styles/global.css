@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tokens de marca RHYON.
+   Definir aca los colores, tipografias y escalas cuando exista la identidad
+   visual. Quedan disponibles como utilidades de Tailwind (ej. bg-brand). */
+@theme {
+  /* --color-brand: #000000; */
+  /* --font-display: "Inter", sans-serif; */
+}
