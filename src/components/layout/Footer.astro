@@ -1,0 +1,63 @@
+---
+import Container from '../primitives/Container.astro';
+import { site, social, contact, footerLinks } from '../../lib/site';
+
+const year = new Date().getFullYear();
+const profiles = Object.entries(social).filter(([, url]) => url.length > 0);
+---
+
+<footer class="border-line bg-surface-sunken border-t">
+  <Container size="wide" class="py-14">
+    <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+        <p class="font-display text-accent text-lg font-semibold">{site.name}</p>
+        {contact.email && (
+          <a
+            href={`mailto:${contact.email}`}
+            class="text-content-muted hover:text-accent mt-2 block text-sm transition-colors"
+          >
+            {contact.email}
+          </a>
+        )}
+      </div>
+
+      {footerLinks.length > 0 && (
+        <nav aria-label="Enlaces del pie">
+          <ul class="flex flex-col gap-2.5">
+            {footerLinks.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-content-muted hover:text-accent text-sm transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {profiles.length > 0 && (
+        <ul class="flex gap-5">
+          {profiles.map(([name, url]) => (
+            <li>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-content-muted hover:text-accent text-sm capitalize transition-colors"
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+
+    <p class="border-line text-content-subtle mt-10 border-t pt-8 text-xs">
+      &copy; {year} {site.name}. Todos los derechos reservados.
+    </p>
+  </Container>
+</footer>
