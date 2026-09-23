@@ -11,7 +11,7 @@
 
 @theme {
   /* ------------------------------------------------------------------------
-     MARCA — Rojo Torino (granata)
+     MARCA — Rojo Torino
      ------------------------------------------------------------------------
      brand-800 es el color del logo. Los demas pasos derivan de el: los claros
      (50-200) para fondos y superficies teñidas, los medios (300-600) para
@@ -36,7 +36,7 @@
      NEUTROS — Arena
      ------------------------------------------------------------------------
      Grises calidos, no neutros puros. Tienen una base beige que armoniza con
-     el granata; un gris frio al lado del rojo Torino se ve sucio.
+     el rojo Torino; un gris frio a su lado se ve sucio.
      ---------------------------------------------------------------------- */
   --color-sand-50: #faf8f5;
   --color-sand-100: #f4f0e9;
@@ -68,7 +68,7 @@
      TIPOGRAFIA
      ------------------------------------------------------------------------
      Fraunces (serif variable) para titulos: carácter editorial, acompaña bien
-     al granata. Inter para texto: neutra y muy legible en tamaños chicos.
+     al rojo Torino. Inter para texto: neutra y muy legible en tamaños chicos.
      Ambas se sirven desde el propio dominio via @fontsource (ver global.css),
      no desde un CDN externo.
      ---------------------------------------------------------------------- */
@@ -100,7 +100,7 @@
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
 
-  /* Sombras tintadas con el granata en vez de negro puro: se integran mejor
+  /* Sombras tintadas con el rojo Torino en vez de negro puro: se integran mejor
      sobre fondos crema. */
   --shadow-xs: 0 1px 2px 0 rgb(59 12 17 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(59 12 17 / 0.08), 0 1px 2px -1px rgb(59 12 17 / 0.06);

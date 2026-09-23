@@ -18,7 +18,7 @@ En la práctica:
   Un `<hr>` casi siempre indica que falta espaciado.
 - **Una jerarquía por pantalla.** Un solo elemento dominante. Si todo grita,
   no se escucha nada.
-- **El color acentúa, no decora.** El granata marca acciones y acentos. Como
+- **El color acentúa, no decora.** El rojo Torino marca acciones y acentos. Como
   superficie grande abruma y pierde fuerza.
 - **Máximo dos pesos tipográficos visibles** por sección.
 - **Menos bordes, más contraste de superficie.** `bg-surface-sunken` separa

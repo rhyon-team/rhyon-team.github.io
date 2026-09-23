@@ -70,7 +70,7 @@
   --line: var(--color-sand-800);
   --line-strong: var(--color-sand-700);
 
-  /* Sobre fondo oscuro el granata profundo pierde legibilidad: se sube la
+  /* Sobre fondo oscuro el rojo Torino profundo pierde legibilidad: se sube la
      rampa para mantener contraste suficiente. */
   --accent: var(--color-brand-500);
   --accent-hover: var(--color-brand-400);

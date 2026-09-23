@@ -63,7 +63,7 @@ Correr `npm run verify` antes de abrir un PR: si pasa local, pasa en CI.
 
 ### Paleta — Rojo Torino
 
-El color de marca es el **granata del Torino FC**: un rojo profundo y cálido.
+El color de marca es el **rojo Torino**: un rojo profundo y cálido.
 Está declarado como escala completa en `src/styles/tokens.css`.
 
 | Token         | Hex       | Uso                                    |
@@ -74,7 +74,7 @@ Está declarado como escala completa en `src/styles/tokens.css`.
 | `brand-900…950`| oscuros  | Texto sobre fondo claro, sombras.      |
 
 Los neutros son **grises cálidos** (`sand-*`) con base beige, más `cream` como
-fondo de página. Un gris frío junto al granata se percibe apagado; el cálido lo
+fondo de página. Un gris frío junto al rojo Torino se percibe apagado; el cálido lo
 acompaña.
 
 > El valor definitivo del logo está pendiente de confirmación. Al llegar, se
@@ -92,7 +92,7 @@ adapta sola al tema:
 | `bg-surface-sunken` | Secciones alternas                 |
 | `text-content`      | Texto principal                    |
 | `text-content-muted`| Texto secundario                   |
-| `bg-accent`         | Acción principal (el granata)      |
+| `bg-accent`         | Acción principal (rojo Torino)      |
 | `border-line`       | Bordes                             |
 
 Hay modo oscuro preparado a nivel de tokens: sigue la preferencia del sistema y
@@ -100,7 +100,7 @@ puede forzarse con `data-theme="dark"` en `<html>`. El sitio nace en claro.
 
 ### Tipografía
 
-- **Fraunces** (serif variable) para títulos — carácter editorial, acompaña al granata.
+- **Fraunces** (serif variable) para títulos — carácter editorial, acompaña al rojo Torino.
 - **Inter** para texto — legible en tamaños chicos y párrafos largos.
 
 Ambas se sirven desde el propio dominio vía `@fontsource`, no desde un CDN
