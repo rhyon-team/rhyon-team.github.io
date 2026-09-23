@@ -1,0 +1,123 @@
+/* ==========================================================================
+   RHYON — Design tokens
+   --------------------------------------------------------------------------
+   Fuente unica de verdad del sistema visual. Todo color, tipografia, radio y
+   sombra sale de aca. No escribir valores sueltos en los componentes.
+
+   Cada token declarado en @theme genera utilidades de Tailwind
+   automaticamente: --color-brand-800 habilita bg-brand-800, text-brand-800,
+   border-brand-800, etc.
+   ========================================================================== */
+
+@theme {
+  /* ------------------------------------------------------------------------
+     MARCA — Rojo Torino (granata)
+     ------------------------------------------------------------------------
+     brand-800 es el color del logo. Los demas pasos derivan de el: los claros
+     (50-200) para fondos y superficies teñidas, los medios (300-600) para
+     estados hover y detalles, los oscuros (900-950) para texto sobre claro.
+
+     NOTA: el valor definitivo del logo esta pendiente de confirmacion.
+     Cuando llegue, cambiar brand-800 y reajustar la rampa alrededor.
+     ---------------------------------------------------------------------- */
+  --color-brand-50: #fdf4f3;
+  --color-brand-100: #fbe7e5;
+  --color-brand-200: #f8d3d0;
+  --color-brand-300: #f0b2ad;
+  --color-brand-400: #e4867f;
+  --color-brand-500: #d35d55;
+  --color-brand-600: #bb4038;
+  --color-brand-700: #9c2f2c;
+  --color-brand-800: #7c1d26; /* ← ROJO TORINO */
+  --color-brand-900: #6a1d25;
+  --color-brand-950: #3b0c11;
+
+  /* ------------------------------------------------------------------------
+     NEUTROS — Arena
+     ------------------------------------------------------------------------
+     Grises calidos, no neutros puros. Tienen una base beige que armoniza con
+     el granata; un gris frio al lado del rojo Torino se ve sucio.
+     ---------------------------------------------------------------------- */
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f4f0e9;
+  --color-sand-200: #e9e2d7;
+  --color-sand-300: #d8cdbd;
+  --color-sand-400: #bcae9a;
+  --color-sand-500: #9d8d77;
+  --color-sand-600: #81715d;
+  --color-sand-700: #675a4b;
+  --color-sand-800: #463d33;
+  --color-sand-900: #2b2620;
+  --color-sand-950: #1a1613;
+
+  /* Crema: fondo de pagina en modo claro. Mas calido que sand-50. */
+  --color-cream: #faf7f2;
+
+  /* ------------------------------------------------------------------------
+     ESTADOS
+     ------------------------------------------------------------------------
+     Para errores de formulario se usa brand-700: la marca ya es roja y meter
+     un segundo rojo genera ruido. Estos dos cubren el resto.
+     ---------------------------------------------------------------------- */
+  --color-success: #2f7d54;
+  --color-success-soft: #e8f3ec;
+  --color-warning: #a06a12;
+  --color-warning-soft: #fbf0dc;
+
+  /* ------------------------------------------------------------------------
+     TIPOGRAFIA
+     ------------------------------------------------------------------------
+     Fraunces (serif variable) para titulos: carácter editorial, acompaña bien
+     al granata. Inter para texto: neutra y muy legible en tamaños chicos.
+     Ambas se sirven desde el propio dominio via @fontsource (ver global.css),
+     no desde un CDN externo.
+     ---------------------------------------------------------------------- */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+  /* Escala tipografica. Los pasos display-* son para titulos de seccion. */
+  --text-display-sm: 2rem;
+  --text-display-sm--line-height: 1.15;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-display-md: 2.75rem;
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.025em;
+  --text-display-lg: 3.75rem;
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-xl: 5rem;
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.035em;
+
+  /* ------------------------------------------------------------------------
+     FORMA
+     ---------------------------------------------------------------------- */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Sombras tintadas con el granata en vez de negro puro: se integran mejor
+     sobre fondos crema. */
+  --shadow-xs: 0 1px 2px 0 rgb(59 12 17 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(59 12 17 / 0.08), 0 1px 2px -1px rgb(59 12 17 / 0.06);
+  --shadow-md: 0 4px 12px -2px rgb(59 12 17 / 0.1), 0 2px 4px -2px rgb(59 12 17 / 0.06);
+  --shadow-lg: 0 12px 28px -6px rgb(59 12 17 / 0.12), 0 4px 8px -4px rgb(59 12 17 / 0.06);
+  --shadow-xl: 0 24px 48px -12px rgb(59 12 17 / 0.18);
+
+  /* ------------------------------------------------------------------------
+     MOVIMIENTO
+     ------------------------------------------------------------------------
+     Curvas con salida rapida y frenado suave. Se sienten mas naturales que
+     ease-in-out para entradas de UI.
+     ---------------------------------------------------------------------- */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Ancho maximo del contenido. Lo consume el componente Container. */
+  --container-content: 72rem;
+}

@@ -1,9 +1,211 @@
-@import "tailwindcss";
+/* ==========================================================================
+   RHYON — Estilos globales
+   ========================================================================== */
 
-/* Tokens de marca RHYON.
-   Definir aca los colores, tipografias y escalas cuando exista la identidad
-   visual. Quedan disponibles como utilidades de Tailwind (ej. bg-brand). */
-@theme {
-  /* --color-brand: #000000; */
-  /* --font-display: "Inter", sans-serif; */
+@import 'tailwindcss';
+
+/* Tipografias servidas desde nuestro propio dominio, no desde un CDN.
+   Evita una conexion a terceros y el salto de fuente al cargar. */
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/inter';
+
+@import './tokens.css';
+
+/* --------------------------------------------------------------------------
+   Modo oscuro
+   --------------------------------------------------------------------------
+   Sigue la preferencia del sistema, y puede forzarse con data-theme="light"
+   o data-theme="dark" en <html>. El sitio nace en claro; el modo oscuro esta
+   preparado a nivel de tokens por si se decide usarlo.
+   -------------------------------------------------------------------------- */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme='light']), :root:not([data-theme='light']) *) {
+      @slot;
+    }
+  }
+  &:where([data-theme='dark'], [data-theme='dark'] *) {
+    @slot;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tokens semanticos
+   --------------------------------------------------------------------------
+   Los componentes usan estos, nunca la paleta cruda. Asi un cambio de tema
+   se resuelve en un solo lugar: bg-surface siempre es "el fondo correcto",
+   sin importar el modo.
+   -------------------------------------------------------------------------- */
+:root {
+  --surface: var(--color-cream);
+  --surface-raised: #ffffff;
+  --surface-sunken: var(--color-sand-100);
+  --surface-inverse: var(--color-sand-950);
+
+  --content: var(--color-sand-950);
+  --content-muted: var(--color-sand-700);
+  --content-subtle: var(--color-sand-500);
+  --content-inverse: var(--color-sand-50);
+
+  --line: var(--color-sand-200);
+  --line-strong: var(--color-sand-300);
+
+  --accent: var(--color-brand-800);
+  --accent-hover: var(--color-brand-900);
+  --accent-soft: var(--color-brand-50);
+  --accent-content: #ffffff;
+}
+
+[data-theme='dark'] {
+  --surface: var(--color-sand-950);
+  --surface-raised: var(--color-sand-900);
+  --surface-sunken: #12100e;
+  --surface-inverse: var(--color-sand-50);
+
+  --content: var(--color-sand-100);
+  --content-muted: var(--color-sand-400);
+  --content-subtle: var(--color-sand-500);
+  --content-inverse: var(--color-sand-950);
+
+  --line: var(--color-sand-800);
+  --line-strong: var(--color-sand-700);
+
+  /* Sobre fondo oscuro el granata profundo pierde legibilidad: se sube la
+     rampa para mantener contraste suficiente. */
+  --accent: var(--color-brand-500);
+  --accent-hover: var(--color-brand-400);
+  --accent-soft: #2a1114;
+  --accent-content: var(--color-sand-950);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --surface: var(--color-sand-950);
+    --surface-raised: var(--color-sand-900);
+    --surface-sunken: #12100e;
+    --surface-inverse: var(--color-sand-50);
+
+    --content: var(--color-sand-100);
+    --content-muted: var(--color-sand-400);
+    --content-subtle: var(--color-sand-500);
+    --content-inverse: var(--color-sand-950);
+
+    --line: var(--color-sand-800);
+    --line-strong: var(--color-sand-700);
+
+    --accent: var(--color-brand-500);
+    --accent-hover: var(--color-brand-400);
+    --accent-soft: #2a1114;
+    --accent-content: var(--color-sand-950);
+  }
+}
+
+/* `inline` hace que las utilidades apunten a la variable viva en vez de
+   congelar su valor, que es lo que permite el cambio de tema en caliente. */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-inverse: var(--surface-inverse);
+
+  --color-content: var(--content);
+  --color-content-muted: var(--content-muted);
+  --color-content-subtle: var(--content-subtle);
+  --color-content-inverse: var(--content-inverse);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-content: var(--accent-content);
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Compensa el header fijo al saltar a un ancla. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--content);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Foco visible solo para navegacion por teclado: no molesta al mouse,
+     pero nunca desaparece para quien usa Tab. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  ::selection {
+    background-color: var(--color-brand-800);
+    color: #ffffff;
+  }
+
+  /* Respeta a quien pidio menos movimiento a nivel de sistema. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Utilidades propias
+   -------------------------------------------------------------------------- */
+@utility skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: var(--radius-md);
+  background-color: var(--accent);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-content);
+  transition: top 150ms var(--ease-out-quint);
+
+  &:focus {
+    top: 0.5rem;
+  }
 }
