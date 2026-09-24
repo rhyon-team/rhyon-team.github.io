@@ -1,5 +1,18 @@
 import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { extendTailwindMerge } from 'tailwind-merge';
+
+/**
+ * tailwind-merge solo conoce los tamaños de Tailwind. Sin declarar la escala
+ * propia, toma `text-display-lg` por un color y lo descarta al combinarlo con
+ * `text-content-inverse`: el titulo pierde su tamaño.
+ */
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      'font-size': [{ text: ['display-sm', 'display-md', 'display-lg', 'display-xl'] }],
+    },
+  },
+});
 
 /**
  * Combina clases condicionales y resuelve conflictos de Tailwind.
