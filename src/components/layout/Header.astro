@@ -1,5 +1,6 @@
 ---
 import Container from '../primitives/Container.astro';
+import Button from '../primitives/Button.astro';
 import MobileNav from './MobileNav.tsx';
 import { navigation, site } from '../../lib/site';
 ---
@@ -15,7 +16,7 @@ import { navigation, site } from '../../lib/site';
     </a>
 
     {navigation.length > 0 && (
-      <nav class="hidden md:block" aria-label="Navegacion principal">
+      <nav class="hidden items-center gap-8 md:flex" aria-label="Navegacion principal">
         <ul class="flex items-center gap-8">
           {navigation.map((item) => (
             <li>
@@ -28,6 +29,9 @@ import { navigation, site } from '../../lib/site';
             </li>
           ))}
         </ul>
+        <Button href="/#contacto" size="sm">
+          Hablemos
+        </Button>
       </nav>
     )}
 
