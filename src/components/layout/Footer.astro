@@ -1,16 +1,28 @@
 ---
 import Container from '../primitives/Container.astro';
+import Eyebrow from '../primitives/Eyebrow.astro';
 import { site, social, contact, footerLinks } from '../../lib/site';
 
 const year = new Date().getFullYear();
-const profiles = Object.entries(social).filter(([, url]) => url.length > 0);
+// Nombres de marca escritos a mano: capitalizar la clave daria "Github" o "Linkedin".
+const nombresDeRed: Record<keyof typeof social, string> = {
+  linkedin: 'LinkedIn',
+  instagram: 'Instagram',
+  x: 'X',
+  github: 'GitHub',
+};
+
+const profiles = (Object.keys(social) as (keyof typeof social)[])
+  .filter((red) => social[red].length > 0)
+  .map((red) => ({ nombre: nombresDeRed[red], url: social[red] }));
 ---
 
 <footer class="border-line bg-surface-sunken border-t">
   <Container size="wide" class="py-14">
     <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
       <div>
-        <p class="font-display text-accent text-lg font-semibold">{site.name}</p>
+        <p class="font-display text-accent text-lg font-bold">{site.name}</p>
+        <Eyebrow class="text-content-subtle mt-1 sm:text-xs">{site.tagline}</Eyebrow>
         {contact.email && (
           <a
             href={`mailto:${contact.email}`}
@@ -40,15 +52,15 @@ const profiles = Object.entries(social).filter(([, url]) => url.length > 0);
 
       {profiles.length > 0 && (
         <ul class="flex gap-5">
-          {profiles.map(([name, url]) => (
+          {profiles.map(({ nombre, url }) => (
             <li>
               <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-content-muted hover:text-accent text-sm capitalize transition-colors"
+                class="text-content-muted hover:text-accent text-sm transition-colors"
               >
-                {name}
+                {nombre}
               </a>
             </li>
           ))}

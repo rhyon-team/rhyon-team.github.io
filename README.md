@@ -5,8 +5,8 @@ Sitio web institucional de RHYON.
 **Producción:** https://rhyon-team.github.io
 **Sistema de diseño:** https://rhyon-team.github.io/styleguide
 
-> **Estado:** boilerplate completo. La landing todavía no fue construida — la
-> home es un marcador de posición.
+> **Estado:** home con Hero, Servicios y Contacto. La identidad de marca, el
+> email y el WhatsApp son provisorios: ver [docs/placeholders.md](./docs/placeholders.md).
 
 ---
 
@@ -100,7 +100,8 @@ puede forzarse con `data-theme="dark"` en `<html>`. El sitio nace en claro.
 
 ### Tipografía
 
-- **Fraunces** (serif variable) para títulos — carácter editorial, acompaña al rojo Torino.
+- **Plus Jakarta Sans** para títulos — sans geométrica, **provisoria** hasta confirmar
+  la tipografía de la marca (ver [docs/placeholders.md](./docs/placeholders.md)).
 - **Inter** para texto — legible en tamaños chicos y párrafos largos.
 
 Ambas se sirven desde el propio dominio vía `@fontsource`, no desde un CDN
@@ -128,7 +129,8 @@ buscadores y del sitemap.
 ├── src/
 │   ├── components/
 │   │   ├── layout/             Header, Footer, MobileNav (isla React)
-│   │   ├── primitives/         Button, Container, Section, Heading
+│   │   ├── primitives/         Button, Card, Container, Eyebrow, Heading, Section
+│   │   ├── secciones/          Hero, Servicios, Contacto (la home)
 │   │   └── seo/                SEO (meta tags + JSON-LD)
 │   ├── layouts/BaseLayout.astro
 │   ├── lib/
@@ -191,11 +193,11 @@ Las IPs vigentes están en la
 
 ## Pendientes
 
-- [ ] Confirmar el hex exacto del logo y ajustar `--color-brand-800`
-- [ ] Completar `src/lib/site.ts`: descripción, contacto, redes, navegación
-- [ ] Reemplazar las imágenes provisorias (favicon y og-image): ver
+- [ ] Recibir la identidad de marca (logo en SVG, tipografía, hex del rojo y
+      del fondo oscuro) y reemplazar los provisorios: ver
       [docs/placeholders.md](./docs/placeholders.md)
-- [ ] Construir la landing
+- [ ] Completar email y WhatsApp en `src/lib/site.ts` (ver docs/placeholders.md)
+- [ ] Secciones pendientes: Cómo trabajamos y Producto propio
 - [ ] Conectar el dominio propio
 
 ---

@@ -87,14 +87,15 @@ Para varias zonas, usar slots con nombre.
 
 ## Primitivos
 
-`Button`, `Container`, `Section` y `Heading` son la base. Antes de escribir un
+`Button`, `Card`, `Container`, `Eyebrow`, `Heading` y `Section` son la base. Antes de escribir un
 componente nuevo, revisar si alguno resuelve el caso.
 
 Un primitivo nuevo va en `src/components/primitives/`, es genérico (no sabe
 nada del contenido de la landing) y se agrega al `/styleguide`.
 
-Los componentes con contenido específico de una sección van en
-`src/components/` directamente, no en `primitives/`.
+Los componentes con contenido específico van fuera de `primitives/`: las
+secciones de la home en `src/components/secciones/`, el resto en
+`src/components/`.
 
 ## Contenido
 

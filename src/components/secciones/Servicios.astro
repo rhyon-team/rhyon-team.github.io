@@ -1,0 +1,52 @@
+---
+import Section from '../primitives/Section.astro';
+import Container from '../primitives/Container.astro';
+import Heading from '../primitives/Heading.astro';
+import Eyebrow from '../primitives/Eyebrow.astro';
+import Card from '../primitives/Card.astro';
+
+interface Servicio {
+  titulo: string;
+  descripcion: string;
+  etiquetas: string[];
+}
+
+const servicios: Servicio[] = [
+  {
+    titulo: 'Software a medida',
+    descripcion:
+      'Apps, plataformas y sistemas internos diseñados alrededor de cómo trabaja tu negocio, no al revés. Sumamos IA donde ahorra tiempo de verdad.',
+    etiquetas: ['Apps', 'Plataformas', 'Sistemas internos'],
+  },
+  {
+    titulo: 'Integración y automatización',
+    descripcion:
+      'Conectamos tu CRM, tu mensajería y tu gestión para que la información fluya sola. Menos pasos manuales, más continuidad.',
+    etiquetas: ['CRM', 'Mensajería', 'Gestión'],
+  },
+  {
+    titulo: 'Primera versión',
+    descripcion:
+      'Llevamos tu idea a una primera versión funcional para probarla con usuarios reales. Probá, aprendé y evolucioná con datos, no con suposiciones.',
+    etiquetas: ['MVP', 'Prototipos', 'Validación'],
+  },
+];
+---
+
+<Section id="servicios" tone="sunken">
+  <Container>
+    <Eyebrow>Servicios</Eyebrow>
+    <Heading as="h2" class="mt-4">
+      Qué hacemos
+    </Heading>
+    <ul class="mt-12 grid gap-6 md:grid-cols-3">
+      {servicios.map((servicio) => (
+        <Card as="li" class="flex flex-col">
+          <h3 class="text-xl">{servicio.titulo}</h3>
+          <p class="text-content-muted mt-3">{servicio.descripcion}</p>
+          <p class="text-accent mt-auto pt-6 text-sm">{servicio.etiquetas.join(' · ')}</p>
+        </Card>
+      ))}
+    </ul>
+  </Container>
+</Section>

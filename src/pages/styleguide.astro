@@ -4,6 +4,8 @@ import Container from '../components/primitives/Container.astro';
 import Section from '../components/primitives/Section.astro';
 import Heading from '../components/primitives/Heading.astro';
 import Button from '../components/primitives/Button.astro';
+import Card from '../components/primitives/Card.astro';
+import Eyebrow from '../components/primitives/Eyebrow.astro';
 
 /**
  * Referencia viva del sistema de diseño.
@@ -179,14 +181,14 @@ const variants = ['primary', 'secondary', 'outline', 'ghost', 'link'] as const;
               <span>{t.token}</span>
               <span>{t.use}</span>
             </div>
-            <p class:list={['font-display mt-2 font-semibold', t.class]}>Rojo Torino</p>
+            <p class:list={['font-display mt-2 font-bold', t.class]}>Rojo Torino</p>
           </div>
         ))}
         <div>
           <p class="text-content-subtle font-mono text-xs">base — Inter</p>
           <p class="text-content-muted mt-2 max-w-2xl">
             El cuerpo de texto usa Inter. Esta pensada para tamaños chicos y mantiene la
-            legibilidad en parrafos largos, que es donde una serif de titulos empieza a cansar.
+            legibilidad en parrafos largos, donde una tipografia de titulos empieza a cansar.
           </p>
         </div>
       </div>
@@ -224,6 +226,32 @@ const variants = ['primary', 'secondary', 'outline', 'ghost', 'link'] as const;
   </Section>
 
   <Section spacing="sm" tone="sunken">
+    <Container>
+      <Heading as="h2" size="sm">
+        Tarjetas y eyebrow
+      </Heading>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <Card>
+          <p class="text-content-subtle mb-3 font-mono text-xs">Card</p>
+          <h3 class="text-xl">Titulo de tarjeta</h3>
+          <p class="text-content-muted mt-3">
+            Superficie elevada para agrupar contenido. Con la prop de tag se renderiza como
+            item de lista o articulo.
+          </p>
+        </Card>
+        <Card>
+          <p class="text-content-subtle mb-3 font-mono text-xs">Eyebrow</p>
+          <Eyebrow>Software · IA · Consultoría</Eyebrow>
+          <p class="text-content-muted mt-3">
+            Texto chico en mayusculas sobre un titulo. Ubica al lector antes del mensaje
+            principal.
+          </p>
+        </Card>
+      </div>
+    </Container>
+  </Section>
+
+  <Section spacing="sm">
     <Container>
       <div class="grid gap-12 lg:grid-cols-2">
         <div>

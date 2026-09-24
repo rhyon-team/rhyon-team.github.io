@@ -14,14 +14,16 @@ interface Props {
 
 const { as: Tag = 'h2', size = 'md', class: className } = Astro.props;
 
+// Los tamaños grandes arrancan un paso o dos mas abajo en mobile: a 360 px,
+// display-xl no entra ni una palabra larga por linea.
 const sizes = {
   sm: 'text-display-sm',
-  md: 'text-display-md',
-  lg: 'text-display-lg',
-  xl: 'text-display-xl',
+  md: 'text-display-sm sm:text-display-md',
+  lg: 'text-display-md sm:text-display-lg',
+  xl: 'text-display-md sm:text-display-lg lg:text-display-xl',
 };
 ---
 
-<Tag class={cn('font-display font-semibold text-balance', sizes[size], className)}>
+<Tag class={cn('font-display font-bold text-balance', sizes[size], className)}>
   <slot />
 </Tag>

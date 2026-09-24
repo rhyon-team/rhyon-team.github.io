@@ -34,6 +34,11 @@ nunca animación que retrase la lectura.
 El color de marca es el **rojo Torino** (`brand-800`, `#7c1d26`). Se usa con
 moderación: acentos y acciones, no superficies grandes.
 
+**La identidad de marca es provisoria.** Falta el logo, la tipografía y los hex
+exactos; mientras tanto se usan aproximaciones. Antes de tocar color,
+tipografía, logo o imágenes, leer `docs/placeholders.md`: dice qué falta, qué
+se usa en su lugar y dónde se cambia.
+
 ## Reglas innegociables
 
 - **Los colores salen de los tokens.** Nunca un hex ni un `bg-[#...]` en un
@@ -51,11 +56,12 @@ moderación: acentos y acciones, no superficies grandes.
 | --------------------- | --------------------------------------------- |
 | `src/styles/tokens.css` | Paleta, tipografía, sombras, radios         |
 | `src/styles/global.css` | Capa semántica, estilos base, accesibilidad |
-| `src/components/primitives/` | Button, Container, Section, Heading    |
+| `src/components/primitives/` | Button, Card, Container, Eyebrow, Heading, Section |
+| `src/components/secciones/` | Secciones de la home: Hero, Servicios, Contacto |
 | `src/components/layout/` | Header, Footer, MobileNav              |
 | `src/lib/site.ts`     | Nombre, contacto, navegación, redes           |
 | `/styleguide`         | Referencia viva del sistema de diseño         |
-| `docs/placeholders.md` | Imágenes provisorias y cómo reemplazarlas   |
+| `docs/placeholders.md` | Identidad, contacto e imágenes provisorias |
 
 Los datos que se repiten entre páginas van en `src/lib/site.ts`, nunca
 escritos en el markup.

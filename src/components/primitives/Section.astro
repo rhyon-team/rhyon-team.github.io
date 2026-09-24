@@ -23,7 +23,9 @@ const tones = {
   default: 'bg-surface text-content',
   sunken: 'bg-surface-sunken text-content',
   accent: 'bg-accent-soft text-content',
-  inverse: 'bg-surface-inverse text-content-inverse',
+  // Sobre el fondo oscuro, el rojo del anillo de foco no llega al contraste
+  // minimo: se usa el color del texto.
+  inverse: 'bg-surface-inverse text-content-inverse [--focus-ring:var(--content-inverse)]',
 };
 ---
 
