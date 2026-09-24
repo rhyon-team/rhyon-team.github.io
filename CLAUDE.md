@@ -56,11 +56,12 @@ se usa en su lugar y dónde se cambia.
 | --------------------- | --------------------------------------------- |
 | `src/styles/tokens.css` | Paleta, tipografía, sombras, radios         |
 | `src/styles/global.css` | Capa semántica, estilos base, accesibilidad |
-| `src/components/primitives/` | Button, Container, Section, Heading    |
+| `src/components/primitives/` | Button, Card, Container, Eyebrow, Heading, Section |
+| `src/components/secciones/` | Secciones de la home: Hero, Servicios, Contacto |
 | `src/components/layout/` | Header, Footer, MobileNav              |
 | `src/lib/site.ts`     | Nombre, contacto, navegación, redes           |
 | `/styleguide`         | Referencia viva del sistema de diseño         |
-| `docs/placeholders.md` | Imágenes provisorias y cómo reemplazarlas   |
+| `docs/placeholders.md` | Identidad, contacto e imágenes provisorias |
 
 Los datos que se repiten entre páginas van en `src/lib/site.ts`, nunca
 escritos en el markup.

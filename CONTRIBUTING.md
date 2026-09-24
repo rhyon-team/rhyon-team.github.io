@@ -125,7 +125,8 @@ primer viewport.
 src/
 ├── components/
 │   ├── layout/       Header, Footer, MobileNav
-│   ├── primitives/   Button, Container, Section, Heading
+│   ├── primitives/   Button, Card, Container, Eyebrow, Heading, Section
+│   ├── secciones/    Hero, Servicios, Contacto
 │   └── seo/          SEO
 ├── layouts/          BaseLayout
 ├── lib/              cn, site (config), seo
