@@ -10,7 +10,7 @@ const profiles = Object.entries(social).filter(([, url]) => url.length > 0);
   <Container size="wide" class="py-14">
     <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
       <div>
-        <p class="font-display text-accent text-lg font-semibold">{site.name}</p>
+        <p class="font-display text-accent text-lg font-bold">{site.name}</p>
         {contact.email && (
           <a
             href={`mailto:${contact.email}`}

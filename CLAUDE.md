@@ -34,6 +34,11 @@ nunca animación que retrase la lectura.
 El color de marca es el **rojo Torino** (`brand-800`, `#7c1d26`). Se usa con
 moderación: acentos y acciones, no superficies grandes.
 
+**La identidad de marca es provisoria.** Falta el logo, la tipografía y los hex
+exactos; mientras tanto se usan aproximaciones. Antes de tocar color,
+tipografía, logo o imágenes, leer `docs/placeholders.md`: dice qué falta, qué
+se usa en su lugar y dónde se cambia.
+
 ## Reglas innegociables
 
 - **Los colores salen de los tokens.** Nunca un hex ni un `bg-[#...]` en un

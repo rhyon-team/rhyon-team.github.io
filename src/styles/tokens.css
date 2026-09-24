@@ -17,8 +17,9 @@
      (50-200) para fondos y superficies teñidas, los medios (300-600) para
      estados hover y detalles, los oscuros (900-950) para texto sobre claro.
 
-     NOTA: el valor definitivo del logo esta pendiente de confirmacion.
-     Cuando llegue, cambiar brand-800 y reajustar la rampa alrededor.
+     PROVISORIO: el hex exacto de la marca falta confirmar. Cuando llegue,
+     cambiar brand-800, reajustar la rampa alrededor y actualizar
+     site.themeColor. Ver docs/placeholders.md.
      ---------------------------------------------------------------------- */
   --color-brand-50: #fdf4f3;
   --color-brand-100: #fbe7e5;
@@ -67,12 +68,15 @@
   /* ------------------------------------------------------------------------
      TIPOGRAFIA
      ------------------------------------------------------------------------
-     Fraunces (serif variable) para titulos: carácter editorial, acompaña bien
-     al rojo Torino. Inter para texto: neutra y muy legible en tamaños chicos.
-     Ambas se sirven desde el propio dominio via @fontsource (ver global.css),
-     no desde un CDN externo.
+     Plus Jakarta Sans para titulos, Inter para texto. Ambas se sirven desde el
+     propio dominio via @fontsource (ver global.css), no desde un CDN externo.
+
+     PROVISORIO: la marca usa una sans geometrica bold cuyo nombre falta
+     confirmar. Plus Jakarta Sans es la alternativa gratuita mas cercana; al
+     llegar la real, cambiar --font-display y su import en global.css. Ver
+     docs/placeholders.md.
      ---------------------------------------------------------------------- */
-  --font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+  --font-display: 'Plus Jakarta Sans Variable', system-ui, -apple-system, sans-serif;
   --font-sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
 

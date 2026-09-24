@@ -100,7 +100,8 @@ puede forzarse con `data-theme="dark"` en `<html>`. El sitio nace en claro.
 
 ### Tipografía
 
-- **Fraunces** (serif variable) para títulos — carácter editorial, acompaña al rojo Torino.
+- **Plus Jakarta Sans** para títulos — sans geométrica, **provisoria** hasta confirmar
+  la tipografía de la marca (ver [docs/placeholders.md](./docs/placeholders.md)).
 - **Inter** para texto — legible en tamaños chicos y párrafos largos.
 
 Ambas se sirven desde el propio dominio vía `@fontsource`, no desde un CDN
@@ -191,10 +192,10 @@ Las IPs vigentes están en la
 
 ## Pendientes
 
-- [ ] Confirmar el hex exacto del logo y ajustar `--color-brand-800`
-- [ ] Completar `src/lib/site.ts`: descripción, contacto, redes, navegación
-- [ ] Reemplazar las imágenes provisorias (favicon y og-image): ver
+- [ ] Recibir la identidad de marca (logo en SVG, tipografía, hex del rojo y
+      del fondo oscuro) y reemplazar los provisorios: ver
       [docs/placeholders.md](./docs/placeholders.md)
+- [ ] Completar `src/lib/site.ts`: descripción, contacto, redes, navegación
 - [ ] Construir la landing
 - [ ] Conectar el dominio propio
 
