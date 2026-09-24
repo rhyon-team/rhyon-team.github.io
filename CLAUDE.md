@@ -55,6 +55,7 @@ moderación: acentos y acciones, no superficies grandes.
 | `src/components/layout/` | Header, Footer, MobileNav              |
 | `src/lib/site.ts`     | Nombre, contacto, navegación, redes           |
 | `/styleguide`         | Referencia viva del sistema de diseño         |
+| `docs/placeholders.md` | Imágenes provisorias y cómo reemplazarlas   |
 
 Los datos que se repiten entre páginas van en `src/lib/site.ts`, nunca
 escritos en el markup.

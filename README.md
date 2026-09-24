@@ -122,6 +122,8 @@ buscadores y del sitemap.
 │   ├── workflows/ci.yml        Formato, lint, tipos y build en cada PR
 │   ├── workflows/deploy.yml    Deploy a GitHub Pages al mergear a main
 │   └── pull_request_template.md
+├── docs/
+│   └── placeholders.md         Imágenes provisorias y cómo reemplazarlas
 ├── public/                     Servido tal cual (favicon, robots.txt, imágenes)
 ├── src/
 │   ├── components/
@@ -187,8 +189,8 @@ Las IPs vigentes están en la
 
 - [ ] Confirmar el hex exacto del logo y ajustar `--color-brand-800`
 - [ ] Completar `src/lib/site.ts`: descripción, contacto, redes, navegación
-- [ ] Reemplazar `public/favicon.svg` por el logo definitivo
-- [ ] Agregar `public/og-image.png` (1200×630) para los previews al compartir
+- [ ] Reemplazar las imágenes provisorias (favicon y og-image): ver
+      [docs/placeholders.md](./docs/placeholders.md)
 - [ ] Construir la landing
 - [ ] Conectar el dominio propio
 
