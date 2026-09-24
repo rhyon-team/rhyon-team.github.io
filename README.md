@@ -151,15 +151,17 @@ viven en **`src/lib/site.ts`**, no escritos en el markup.
 
 ## Cómo trabajar
 
-`main` siempre debe estar desplegable: cada commit que llega ahí se publica.
-El desarrollo va en branches.
+`main` es producción y `dev` es integración. Ninguna acepta pushes directos:
+las ramas salen de `dev`, vuelven a `dev` por PR, y `dev` pasa a `main` por PR
+para publicar.
 
 ```bash
+git switch dev && git pull
 git switch -c feat/hero-section
 # ... trabajar ...
 npm run verify
 git push -u origin feat/hero-section
-gh pr create --fill
+gh pr create --fill --base dev
 ```
 
 Las convenciones completas —nombres de rama, commits, cuándo usar React,

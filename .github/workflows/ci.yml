@@ -1,14 +1,15 @@
 name: CI
 
-# Corre en cada pull request hacia main. Es la red de seguridad del flujo por
-# branches: nada llega a main sin pasar formato, lint, tipos y build.
+# Corre en cada pull request hacia dev o main. Es la red de seguridad del
+# flujo por branches: nada llega a dev ni a main sin pasar formato, lint, tipos
+# y build.
 #
 # En los pushes a main no se dispara solo: lo llama deploy.yml como primer
 # paso (workflow_call), asi el sitio no se publica si la verificacion falla y
 # no se corre dos veces por push.
 on:
   pull_request:
-    branches: [main]
+    branches: [dev, main]
   workflow_call:
   workflow_dispatch:
 
@@ -45,3 +46,21 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  origen:
+    name: Origen del PR
+    # Los rulesets de GitHub no pueden limitar desde que rama llega un PR: sin
+    # este job, una rama podria mergearse a main salteando dev.
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar que el PR venga de dev
+        # La rama va por variable de entorno y no interpolada en el script: el
+        # nombre de una rama lo elige quien la crea y podria inyectar comandos.
+        env:
+          RAMA_ORIGEN: ${{ github.head_ref }}
+        run: |
+          if [ "$RAMA_ORIGEN" != "dev" ]; then
+            echo "::error::A main solo se mergea desde dev (este PR viene de $RAMA_ORIGEN)."
+            exit 1
+          fi
