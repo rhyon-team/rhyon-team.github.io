@@ -169,7 +169,9 @@ reglas del sistema de diseño— están en **[CONTRIBUTING.md](./CONTRIBUTING.md
 
 ## Deploy
 
-Cada merge a `main` dispara el workflow, que construye y publica el sitio.
+Cada merge a `main` dispara el workflow de deploy: primero corre la misma
+verificación que CI (formato, lint, tipos y build) y solo si pasa construye y
+publica el sitio.
 
 ### Conectar un dominio propio
 

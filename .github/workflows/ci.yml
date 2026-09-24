@@ -1,13 +1,15 @@
 name: CI
 
-# Corre en cada pull request hacia main y en los pushes directos a main.
-# Es la red de seguridad del flujo por branches: nada llega a main sin pasar
-# formato, lint, tipos y build.
+# Corre en cada pull request hacia main. Es la red de seguridad del flujo por
+# branches: nada llega a main sin pasar formato, lint, tipos y build.
+#
+# En los pushes a main no se dispara solo: lo llama deploy.yml como primer
+# paso (workflow_call), asi el sitio no se publica si la verificacion falla y
+# no se corre dos veces por push.
 on:
   pull_request:
     branches: [main]
-  push:
-    branches: [main]
+  workflow_call:
   workflow_dispatch:
 
 # Si se pushea de nuevo a la misma rama, cancela la corrida anterior.
