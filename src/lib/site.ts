@@ -18,6 +18,12 @@ export const site = {
   lang: 'es',
   /** Imagen para previews al compartir. 1200x630. */
   ogImage: '/og-image.png',
+  /**
+   * Color de la barra del navegador en mobile. Repite --color-brand-800 porque
+   * el <meta name="theme-color"> no puede leer variables CSS: si cambia el
+   * token, cambiar tambien este valor.
+   */
+  themeColor: '#7c1d26',
 } as const;
 
 export const contact = {

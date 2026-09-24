@@ -24,7 +24,7 @@ const { title, description, image, noindex, bare = false } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#7c1d26" />
+    <meta name="theme-color" content={site.themeColor} />
     <SEO title={title} description={description} image={image} noindex={noindex} />
     <slot name="head" />
   </head>
