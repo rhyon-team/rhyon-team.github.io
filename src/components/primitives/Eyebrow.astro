@@ -1,0 +1,18 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<p
+  class={cn(
+    'text-accent text-xs font-medium tracking-[0.2em] uppercase sm:text-sm',
+    className,
+  )}
+>
+  <slot />
+</p>
