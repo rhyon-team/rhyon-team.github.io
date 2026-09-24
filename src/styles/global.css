@@ -6,7 +6,7 @@
 
 /* Tipografias servidas desde nuestro propio dominio, no desde un CDN.
    Evita una conexion a terceros y el salto de fuente al cargar. */
-@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/plus-jakarta-sans';
 @import '@fontsource-variable/inter';
 
 @import './tokens.css';

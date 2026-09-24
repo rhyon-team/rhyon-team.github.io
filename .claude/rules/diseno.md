@@ -91,7 +91,7 @@ espaciado queda declarado en el contenedor y no disperso en cada hijo.
 
 ## Tipografía
 
-`font-display` (Fraunces) para títulos, `font-sans` (Inter) para el resto. No
+`font-display` (Plus Jakarta Sans, provisoria) para títulos, `font-sans` (Inter) para el resto. No
 mezclar.
 
 Los tamaños de título salen de la escala `text-display-*` vía el componente
