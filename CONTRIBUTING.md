@@ -93,7 +93,7 @@ concatenacion con template string no.
 ## Cuando usar React
 
 Por defecto un componente es `.astro` y no envia JavaScript. Solo se pasa a
-React (`.jsx`) cuando hace falta estado o eventos: carrusel, acordeon, menu,
+React (`.tsx`) cuando hace falta estado o eventos: carrusel, acordeon, menu,
 formulario con validacion en vivo.
 
 Al usar una isla, elegir la directiva segun cuando se necesita:
