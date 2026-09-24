@@ -5,8 +5,8 @@ Sitio web institucional de RHYON.
 **Producción:** https://rhyon-team.github.io
 **Sistema de diseño:** https://rhyon-team.github.io/styleguide
 
-> **Estado:** boilerplate completo. La landing todavía no fue construida — la
-> home es un marcador de posición.
+> **Estado:** home con Hero, Servicios y Contacto. La identidad de marca, el
+> email y el WhatsApp son provisorios: ver [docs/placeholders.md](./docs/placeholders.md).
 
 ---
 
@@ -129,7 +129,8 @@ buscadores y del sitemap.
 ├── src/
 │   ├── components/
 │   │   ├── layout/             Header, Footer, MobileNav (isla React)
-│   │   ├── primitives/         Button, Container, Section, Heading
+│   │   ├── primitives/         Button, Card, Container, Eyebrow, Heading, Section
+│   │   ├── secciones/          Hero, Servicios, Contacto (la home)
 │   │   └── seo/                SEO (meta tags + JSON-LD)
 │   ├── layouts/BaseLayout.astro
 │   ├── lib/
@@ -195,8 +196,8 @@ Las IPs vigentes están en la
 - [ ] Recibir la identidad de marca (logo en SVG, tipografía, hex del rojo y
       del fondo oscuro) y reemplazar los provisorios: ver
       [docs/placeholders.md](./docs/placeholders.md)
-- [ ] Completar `src/lib/site.ts`: descripción, contacto, redes, navegación
-- [ ] Construir la landing
+- [ ] Completar email y WhatsApp en `src/lib/site.ts` (ver docs/placeholders.md)
+- [ ] Secciones pendientes: Cómo trabajamos y Producto propio
 - [ ] Conectar el dominio propio
 
 ---

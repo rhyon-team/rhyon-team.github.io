@@ -1,7 +1,8 @@
 # Guía de placeholders
 
 Lo que está en producción de forma provisoria hasta que llegue lo definitivo:
-la identidad de marca (logo, tipografía, colores) y las imágenes.
+la identidad de marca (logo, tipografía, colores), los datos de contacto y las
+imágenes.
 
 Al reemplazar algo, se borra su fila de las tablas. Cuando no quede ninguna,
 este archivo se borra.
@@ -33,6 +34,21 @@ tomadas del Instagram ([@whearerhyon](https://www.instagram.com/whearerhyon/)).
 4. Rehacer `og-image.png` con el logo y la tipografía reales.
 5. Revisar el `/styleguide` completo: se genera desde los tokens, así que
    refleja todo el cambio.
+
+## TODO: datos de contacto
+
+Se completan en `contact`, en `src/lib/site.ts`. Mientras estén vacíos no se
+renderizan: la sección Contacto muestra solo los canales que tengan datos, y el
+primero de la lista queda como botón principal (orden: WhatsApp, email,
+Instagram).
+
+| Falta        | Formato                                                  | Qué se ve mientras tanto                    |
+| ------------ | -------------------------------------------------------- | ------------------------------------------- |
+| **Email**    | `hola@dominio.com`                                       | Nada: no aparece en Contacto ni en el footer |
+| **WhatsApp** | Internacional, sin `+` ni espacios: `598XXXXXXXX`         | Nada: Instagram queda como botón principal   |
+
+El mensaje que se abre ya escrito en WhatsApp está en
+`contact.whatsappMessage`.
 
 ## Imágenes
 

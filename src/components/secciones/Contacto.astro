@@ -1,0 +1,41 @@
+---
+import Section from '../primitives/Section.astro';
+import Container from '../primitives/Container.astro';
+import Heading from '../primitives/Heading.astro';
+import Button from '../primitives/Button.astro';
+import { contact, social } from '../../lib/site';
+
+interface Canal {
+  etiqueta: string;
+  href: string;
+}
+
+const enlaceWhatsApp = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`;
+
+// En orden de preferencia: el primero con datos se muestra como boton
+// principal. Los vacios se descartan, asi la seccion funciona con los datos
+// que haya.
+const canales: Canal[] = [
+  { etiqueta: 'Escribinos por WhatsApp', href: contact.whatsapp ? enlaceWhatsApp : '' },
+  { etiqueta: 'Mandanos un email', href: contact.email ? `mailto:${contact.email}` : '' },
+  { etiqueta: 'Escribinos por Instagram', href: social.instagram },
+].filter((canal) => canal.href.length > 0);
+---
+
+<Section id="contacto" tone="inverse" spacing="lg">
+  <Container size="narrow" class="text-center">
+    <Heading as="h2" size="lg">
+      Hablemos de tu próximo proyecto.
+    </Heading>
+    <p class="text-content-inverse/70 mx-auto mt-6 max-w-xl text-lg">
+      Contanos qué necesitás y vemos juntos por dónde empezar.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      {canales.map((canal, indice) => (
+        <Button href={canal.href} size="lg" variant={indice === 0 ? 'primary' : 'secondary'}>
+          {canal.etiqueta}
+        </Button>
+      ))}
+    </div>
+  </Container>
+</Section>

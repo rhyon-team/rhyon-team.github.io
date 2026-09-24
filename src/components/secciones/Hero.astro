@@ -1,0 +1,30 @@
+---
+import Section from '../primitives/Section.astro';
+import Container from '../primitives/Container.astro';
+import Heading from '../primitives/Heading.astro';
+import Eyebrow from '../primitives/Eyebrow.astro';
+import Button from '../primitives/Button.astro';
+import { site } from '../../lib/site';
+---
+
+<Section spacing="lg">
+  <Container>
+    <Eyebrow>{site.tagline}</Eyebrow>
+    <Heading as="h1" size="xl" class="mt-6">
+      Tu negocio.
+      <br />
+      Tu software.
+    </Heading>
+    <p class="text-content-muted mt-6 max-w-xl text-lg sm:text-xl">
+      Herramientas hechas para tu forma de trabajar.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <Button href="#contacto" size="lg">
+        Hablemos de tu proyecto
+      </Button>
+      <Button href="#servicios" size="lg" variant="secondary">
+        Ver servicios
+      </Button>
+    </div>
+  </Container>
+</Section>
