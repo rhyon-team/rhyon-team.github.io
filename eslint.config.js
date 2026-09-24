@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -12,7 +13,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
  * componente, que es donde suelen aparecer los problemas reales (botones sin
  * nombre accesible, imagenes sin alt, handlers en elementos no interactivos).
  */
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: ['dist/**', '.astro/**', 'node_modules/**', '*.config.mjs'],
   },
