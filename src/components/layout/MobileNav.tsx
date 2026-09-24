@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { NavItem } from '../../lib/site';
 
 interface Props {
@@ -14,6 +14,8 @@ interface Props {
  */
 export default function MobileNav({ items = [] }: Props) {
   const [open, setOpen] = useState(false);
+  const botonRef = useRef<HTMLButtonElement>(null);
+  const primerEnlaceRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -23,9 +25,15 @@ export default function MobileNav({ items = [] }: Props) {
   }, [open]);
 
   useEffect(() => {
+    if (open) primerEnlaceRef.current?.focus();
+  }, [open]);
+
+  useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      botonRef.current?.focus();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -36,6 +44,7 @@ export default function MobileNav({ items = [] }: Props) {
   return (
     <>
       <button
+        ref={botonRef}
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
@@ -69,9 +78,10 @@ export default function MobileNav({ items = [] }: Props) {
         >
           <nav aria-label="Navegacion principal">
             <ul className="flex flex-col gap-1">
-              {items.map((item) => (
+              {items.map((item, indice) => (
                 <li key={item.href}>
                   <a
+                    ref={indice === 0 ? primerEnlaceRef : undefined}
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="text-content hover:bg-surface-sunken font-display block rounded-md px-3 py-3 text-2xl transition"
