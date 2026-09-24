@@ -62,8 +62,14 @@ escritos en el markup.
 
 ## Flujo de trabajo
 
-`main` siempre desplegable. El desarrollo va en ramas (`feat/`, `fix/`,
-`style/`, `refactor/`, `chore/`, `docs/`) y entra por PR.
+`main` es producción: cada merge se publica. `dev` es integración. Ninguna de
+las dos acepta pushes directos; todo entra por PR con CI en verde.
+
+1. La rama (`feat/`, `fix/`, `style/`, `refactor/`, `chore/`, `docs/`) sale de
+   `dev`.
+2. PR de la rama a `dev`, con **squash**.
+3. Para publicar, PR de `dev` a `main`, con **merge commit** (nunca squash: si
+   no, `main` y `dev` se separan). CI rechaza PRs a `main` desde otra rama.
 
 Commits en formato Conventional Commits, en español:
 `feat: agregar seccion de servicios`

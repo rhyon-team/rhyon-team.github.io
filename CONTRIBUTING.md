@@ -2,16 +2,26 @@
 
 ## Flujo por branches
 
-`main` siempre debe estar desplegable: cada commit que llega ahi se publica
-automaticamente. El desarrollo no ocurre en `main`.
+Hay dos ramas fijas, y ninguna acepta pushes directos:
+
+- `main` es produccion: cada commit que llega ahi se publica automaticamente.
+- `dev` es integracion: ahi se juntan los cambios antes de publicarlos.
 
 ```bash
-git switch -c feat/hero-section    # crear rama desde main
+git switch dev && git pull         # partir de dev actualizada
+git switch -c feat/hero-section    # crear la rama
 # ... trabajar ...
 npm run verify                     # antes de pushear
 git push -u origin feat/hero-section
-gh pr create --fill                # abrir el PR
+gh pr create --fill --base dev     # abrir el PR hacia dev
 ```
+
+El PR a `dev` se mergea con **squash**: cada rama queda como un commit.
+
+Para publicar, se abre un PR de `dev` a `main` y se mergea con **merge
+commit**. Nunca squash: `main` tendria commits que `dev` no tiene, y el
+siguiente PR arrastraria cambios viejos o conflictos. CI rechaza cualquier PR
+a `main` que no venga de `dev`.
 
 ### Nombres de rama
 
