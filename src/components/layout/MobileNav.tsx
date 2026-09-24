@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { NavItem } from '../../lib/site';
 
 interface Props {
@@ -71,29 +72,34 @@ export default function MobileNav({ items = [] }: Props) {
         </svg>
       </button>
 
-      {open && (
-        <div
-          id="mobile-nav"
-          className="bg-surface fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto px-5 py-8"
-        >
-          <nav aria-label="Navegacion principal">
-            <ul className="flex flex-col gap-1">
-              {items.map((item, indice) => (
-                <li key={item.href}>
-                  <a
-                    ref={indice === 0 ? primerEnlaceRef : undefined}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-content hover:bg-surface-sunken font-display block rounded-md px-3 py-3 text-2xl transition"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+      {/* El panel se monta en <body> y no adentro del header: el backdrop-blur
+          del header lo convierte en la referencia de los elementos fixed, y el
+          panel quedaria del alto del header en vez de ocupar la pantalla. */}
+      {open &&
+        createPortal(
+          <div
+            id="mobile-nav"
+            className="bg-surface fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto px-5 py-8"
+          >
+            <nav aria-label="Navegacion principal">
+              <ul className="flex flex-col gap-1">
+                {items.map((item, indice) => (
+                  <li key={item.href}>
+                    <a
+                      ref={indice === 0 ? primerEnlaceRef : undefined}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-content hover:bg-surface-sunken font-display block rounded-md px-3 py-3 text-2xl transition"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
