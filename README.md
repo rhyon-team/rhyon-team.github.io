@@ -194,12 +194,11 @@ Las IPs vigentes están en la
 
 ## Pendientes
 
-- [ ] Recibir la identidad de marca (logo en SVG, tipografía, hex del rojo y
-      del fondo oscuro) y reemplazar los provisorios: ver
-      [docs/placeholders.md](./docs/placeholders.md)
-- [ ] Completar email y WhatsApp en `src/lib/site.ts` (ver docs/placeholders.md)
-- [ ] Nombre y detalles del producto propio (hoy "Próximamente")
-- [ ] Conectar el dominio propio
+El backlog está en los
+[issues del repo](https://github.com/rhyon-team/rhyon-team.github.io/issues):
+logo, tipografía, colores, contacto, producto propio, dominio y más contenido. Lo que
+hoy es provisorio en el sitio está resumido en
+[docs/placeholders.md](./docs/placeholders.md).
 
 ---
 

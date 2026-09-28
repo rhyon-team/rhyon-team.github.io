@@ -39,6 +39,9 @@ exactos; mientras tanto se usan aproximaciones. Antes de tocar color,
 tipografía, logo o imágenes, leer `docs/placeholders.md`: dice qué falta, qué
 se usa en su lugar y dónde se cambia.
 
+**El backlog vive en los issues de GitHub.** Cada pendiente tiene un issue con
+sus pasos; el PR que lo resuelve lleva `Closes #N` en la descripción.
+
 ## Reglas innegociables
 
 - **Los colores salen de los tokens.** Nunca un hex ni un `bg-[#...]` en un
