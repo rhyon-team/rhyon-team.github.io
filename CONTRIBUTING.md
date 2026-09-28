@@ -126,7 +126,7 @@ src/
 ├── components/
 │   ├── layout/       Header, Footer, MobileNav
 │   ├── primitives/   Button, Card, Container, Eyebrow, Heading, Section
-│   ├── secciones/    Hero, Servicios, Contacto
+│   ├── secciones/    Secciones de la home (Hero, Clientes, Servicios…)
 │   └── seo/          SEO
 ├── layouts/          BaseLayout
 ├── lib/              cn, site (config), seo
