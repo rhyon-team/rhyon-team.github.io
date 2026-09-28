@@ -22,7 +22,7 @@ const profiles = (Object.keys(social) as (keyof typeof social)[])
     <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
       <div>
         <p class="font-display text-accent text-lg font-bold">{site.name}</p>
-        <Eyebrow class="text-content-subtle mt-1 sm:text-xs">{site.tagline}</Eyebrow>
+        <Eyebrow class="text-content-muted mt-1 sm:text-xs">{site.tagline}</Eyebrow>
         {contact.email && (
           <a
             href={`mailto:${contact.email}`}
@@ -68,7 +68,7 @@ const profiles = (Object.keys(social) as (keyof typeof social)[])
       )}
     </div>
 
-    <p class="border-line text-content-subtle mt-10 border-t pt-8 text-xs">
+    <p class="border-line text-content-muted mt-10 border-t pt-8 text-xs">
       &copy; {year} {site.name}. Todos los derechos reservados.
     </p>
   </Container>

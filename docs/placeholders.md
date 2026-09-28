@@ -50,6 +50,13 @@ Instagram).
 El mensaje que se abre ya escrito en WhatsApp está en
 `contact.whatsappMessage`.
 
+## TODO: producto propio
+
+La sección Producto (`src/components/secciones/Producto.astro`) lo anuncia
+como "Próximamente", sin nombre ni detalles. Cuando esté listo: nombre, una
+línea que diga qué resuelve y un enlace (sitio propio o registro de
+interesados).
+
 ## Imágenes
 
 | Archivo              | Dónde se usa                                     | Formato                        | Placeholder actual                      |
