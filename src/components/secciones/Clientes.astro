@@ -1,0 +1,20 @@
+---
+import Section from '../primitives/Section.astro';
+import Container from '../primitives/Container.astro';
+import Eyebrow from '../primitives/Eyebrow.astro';
+
+const clientes = ['Partido Nacional', 'Valdez & CIA'];
+---
+
+<Section spacing="sm">
+  <Container class="text-center">
+    <Eyebrow class="text-content-muted">Confían en nosotros</Eyebrow>
+    <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-6">
+      {clientes.map((cliente) => (
+        <li class="font-display text-content-muted text-2xl font-bold tracking-tight sm:text-3xl">
+          {cliente}
+        </li>
+      ))}
+    </ul>
+  </Container>
+</Section>
