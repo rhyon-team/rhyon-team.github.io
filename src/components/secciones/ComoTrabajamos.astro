@@ -1,0 +1,53 @@
+---
+import Section from '../primitives/Section.astro';
+import Container from '../primitives/Container.astro';
+import Heading from '../primitives/Heading.astro';
+import Eyebrow from '../primitives/Eyebrow.astro';
+
+interface Paso {
+  titulo: string;
+  descripcion: string;
+}
+
+const pasos: Paso[] = [
+  {
+    titulo: 'Entendemos',
+    descripcion:
+      'Charlamos sobre tu negocio y qué necesitás resolver. Antes de proponer, escuchamos.',
+  },
+  {
+    titulo: 'Primera versión',
+    descripcion:
+      'Construimos lo esencial y lo ponemos a funcionar rápido, para que lo pruebes cuanto antes.',
+  },
+  {
+    titulo: 'Iteramos',
+    descripcion: 'Mejoramos con lo que muestra el uso real, no con suposiciones.',
+  },
+  {
+    titulo: 'Acompañamos',
+    descripcion:
+      'Después del lanzamiento seguimos: soporte, ajustes y nuevas funciones cuando las necesites.',
+  },
+];
+---
+
+<Section id="como-trabajamos">
+  <Container>
+    <Eyebrow>Cómo trabajamos</Eyebrow>
+    <Heading as="h2" class="mt-4">
+      De la idea a algo que funciona
+    </Heading>
+    <ol class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {pasos.map((paso, indice) => (
+        <li>
+          <p class="font-display text-accent text-sm font-bold">
+            {String(indice + 1).padStart(2, '0')}
+          </p>
+          <h3 class="mt-3 text-xl">{paso.titulo}</h3>
+          <p class="text-content-muted mt-3">{paso.descripcion}</p>
+        </li>
+      ))}
+    </ol>
+  </Container>
+</Section>

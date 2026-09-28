@@ -95,8 +95,11 @@ de validación) van en una región con `aria-live` para que se anuncien.
 Texto normal: mínimo 4.5:1 contra su fondo. Texto grande (más de 24 px o 19 px
 en negrita): 3:1.
 
-Los tokens semánticos del sistema ya cumplen. Al combinar colores fuera de esos
-pares, verificar el contraste antes de darlo por bueno.
+Los tokens semánticos del sistema cumplen, con una excepción: en modo claro,
+`text-content-subtle` da 3:1 sobre `surface` y no llega al mínimo para texto
+normal. Usarlo solo en texto grande o decorativo; para texto chico, usar
+`text-content-muted` (6.3:1). Al combinar colores fuera de esos pares,
+verificar el contraste antes de darlo por bueno.
 
 El color nunca es el único indicador: un error en rojo también necesita texto
 o ícono.

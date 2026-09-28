@@ -61,6 +61,7 @@ export interface NavItem {
  */
 export const navigation: NavItem[] = [
   { label: 'Servicios', href: '/#servicios' },
+  { label: 'Cómo trabajamos', href: '/#como-trabajamos' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 
