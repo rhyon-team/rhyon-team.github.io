@@ -34,10 +34,10 @@ nunca animación que retrase la lectura.
 El color de marca es el **rojo Torino** (`brand-800`, `#7c1d26`). Se usa con
 moderación: acentos y acciones, no superficies grandes.
 
-**La identidad de marca es provisoria.** Falta el logo, la tipografía y los hex
-exactos; mientras tanto se usan aproximaciones. Antes de tocar color,
-tipografía, logo o imágenes, leer `docs/placeholders.md`: dice qué falta, qué
-se usa en su lugar y dónde se cambia.
+**Los colores de marca son provisorios.** Faltan los hex exactos; mientras
+tanto se usan aproximaciones. Antes de tocar color o imágenes, leer
+`docs/placeholders.md`: dice qué falta, qué se usa en su lugar y dónde se
+cambia.
 
 **El backlog vive en los issues de GitHub.** Cada pendiente tiene un issue con
 sus pasos; el PR que lo resuelve lleva `Closes #N` en la descripción.
@@ -64,7 +64,7 @@ sus pasos; el PR que lo resuelve lleva `Closes #N` en la descripción.
 | `src/components/layout/` | Header, Footer, MobileNav              |
 | `src/lib/site.ts`     | Nombre, contacto, navegación, redes           |
 | `/styleguide`         | Referencia viva del sistema de diseño         |
-| `docs/placeholders.md` | Identidad, contacto e imágenes provisorias |
+| `docs/placeholders.md` | Colores, contacto e imágenes provisorias |
 
 Los datos que se repiten entre páginas van en `src/lib/site.ts`, nunca
 escritos en el markup.
