@@ -1,8 +1,8 @@
 # Guía de placeholders
 
 Lo que está en producción de forma provisoria hasta que llegue lo definitivo:
-la identidad de marca (logo, tipografía, colores), los datos de contacto, el
-producto propio y las imágenes.
+los colores de marca, los datos de contacto, el producto propio y las
+imágenes.
 
 **El seguimiento está en los issues de GitHub:** cada pendiente tiene uno, con
 los pasos para reemplazarlo. Este archivo es la referencia rápida de qué se usa
@@ -18,7 +18,6 @@ El sitio usa aproximaciones tomadas del Instagram
 
 | Falta | Issue | Qué se usa mientras tanto | Dónde vive |
 | --- | --- | --- | --- |
-| **Tipografía** de títulos | [#13](https://github.com/rhyon-team/rhyon-team.github.io/issues/13) | Plus Jakarta Sans, la sans geométrica gratuita más parecida | `--font-display` en `tokens.css` y su `@import` en `global.css`, `og-image.png` |
 | **Hex del rojo** | [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14) | `#7c1d26`; la imagen del logo usa `#a12030`, más vivo | `--color-brand-800` y la rampa `brand-*` en `tokens.css`, `site.themeColor`, `favicon.svg`, `og-image.png` |
 | **Hex del fondo oscuro** | [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14) | `sand-950` (`#1a1613`) como `surface-inverse` | `--color-sand-950` o `--surface-inverse` en `global.css` |
 
@@ -44,9 +43,9 @@ El mensaje que se abre ya escrito en WhatsApp está en
 
 ## Imágenes
 
-Las dos ya llevan el logo, pero con el rojo y la tipografía provisorios: se
-regeneran al cerrar [#13](https://github.com/rhyon-team/rhyon-team.github.io/issues/13)
-y [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14).
+Las dos ya llevan el logo y la tipografía definitiva, pero con el rojo
+provisorio: se regeneran al cerrar
+[#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14).
 
 | Archivo | Dónde se usa | Formato | Contenido actual |
 | --- | --- | --- | --- |
