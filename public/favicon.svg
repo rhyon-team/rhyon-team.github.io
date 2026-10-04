@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#7c1d26"/>
-  <text x="32" y="45" font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
-        font-size="38" font-weight="800" fill="#faf7f2" text-anchor="middle">R</text>
+  <path fill="#faf7f2" transform="translate(15.8 12) scale(0.0527)" d="M0 195Q0 155 34.9 135.5L225.6 29.2Q278 0 278 60L278 297Q278 327 251.7 341.4L171.8 385.2Q163 390 163 380L163 263Q163 259 159.5 260.9L127 279.1Q120 283 120 291L120 400Q120 408 127 411.9L428.6 578.6Q433 581 433 576L433 372Q433 347 455 335.1L561.9 277.5Q613 250 613 308L613 724Q613 759 578 759L491 759Q485 759 479.8 756L168.5 576Q165 574 165 578L165 724Q165 759 130 759L35 759Q0 759 0 724Z"/>
 </svg>
