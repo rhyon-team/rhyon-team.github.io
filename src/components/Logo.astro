@@ -1,0 +1,18 @@
+---
+import Isotipo from '../assets/isotipo.svg';
+import { site } from '../lib/site';
+import { cn } from '../lib/cn';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span
+  class={cn('font-display text-accent inline-flex items-center gap-2 font-bold', className)}
+>
+  <Isotipo class="h-[1.25em] w-auto" aria-hidden="true" />
+  {site.name}
+</span>
