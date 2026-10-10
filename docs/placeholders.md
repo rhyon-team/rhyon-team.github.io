@@ -29,7 +29,6 @@ principal (orden: WhatsApp, email, Instagram).
 
 | Falta | Issue | Formato | Qué se ve mientras tanto |
 | --- | --- | --- | --- |
-| **WhatsApp** | [#11](https://github.com/rhyon-team/rhyon-team.github.io/issues/11) | Internacional, sin `+` ni espacios: `598XXXXXXXX` | Nada: Instagram queda como botón principal |
 | **Email** | [#15](https://github.com/rhyon-team/rhyon-team.github.io/issues/15) | `hola@dominio.com` | Nada: no aparece en Contacto ni en el footer |
 
 El mensaje que se abre ya escrito en WhatsApp está en
