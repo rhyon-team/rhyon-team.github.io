@@ -36,7 +36,7 @@ export const site = {
 export const contact = {
   email: '',
   /** Formato internacional sin "+" ni espacios, como lo pide wa.me: 598XXXXXXXX. */
-  whatsapp: '',
+  whatsapp: '59898012884',
   /** Texto que aparece ya escrito al abrir el chat. */
   whatsappMessage: 'Hola RHYON, quiero contarles sobre un proyecto.',
   address: '',

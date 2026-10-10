@@ -1,8 +1,8 @@
 # Guía de placeholders
 
 Lo que está en producción de forma provisoria hasta que llegue lo definitivo:
-la identidad de marca (logo, tipografía, colores), los datos de contacto, el
-producto propio y las imágenes.
+los colores de marca, los datos de contacto, el producto propio y las
+imágenes.
 
 **El seguimiento está en los issues de GitHub:** cada pendiente tiene uno, con
 los pasos para reemplazarlo. Este archivo es la referencia rápida de qué se usa
@@ -18,9 +18,7 @@ El sitio usa aproximaciones tomadas del Instagram
 
 | Falta | Issue | Qué se usa mientras tanto | Dónde vive |
 | --- | --- | --- | --- |
-| **Logo** en SVG: isotipo solo y con "RHYON" | [#9](https://github.com/rhyon-team/rhyon-team.github.io/issues/9) | El nombre en texto (`site.name`), con la tipografía de títulos en bold | `Header.astro`, `Footer.astro`, `favicon.svg`, `og-image.png`, `logo` en `src/lib/seo.ts` |
-| **Tipografía** de títulos | [#13](https://github.com/rhyon-team/rhyon-team.github.io/issues/13) | Plus Jakarta Sans, la sans geométrica gratuita más parecida | `--font-display` en `tokens.css` y su `@import` en `global.css` |
-| **Hex del rojo** | [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14) | `#7c1d26`; las capturas sugieren uno algo más vivo | `--color-brand-800` y la rampa `brand-*` en `tokens.css`, `site.themeColor`, `favicon.svg` |
+| **Hex del rojo** | [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14) | `#7c1d26`; la imagen del logo usa `#a12030`, más vivo | `--color-brand-800` y la rampa `brand-*` en `tokens.css`, `site.themeColor`, `favicon.svg`, `og-image.png` |
 | **Hex del fondo oscuro** | [#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14) | `sand-950` (`#1a1613`) como `surface-inverse` | `--color-sand-950` o `--surface-inverse` en `global.css` |
 
 ## Datos de contacto
@@ -31,7 +29,6 @@ principal (orden: WhatsApp, email, Instagram).
 
 | Falta | Issue | Formato | Qué se ve mientras tanto |
 | --- | --- | --- | --- |
-| **WhatsApp** | [#11](https://github.com/rhyon-team/rhyon-team.github.io/issues/11) | Internacional, sin `+` ni espacios: `598XXXXXXXX` | Nada: Instagram queda como botón principal |
 | **Email** | [#15](https://github.com/rhyon-team/rhyon-team.github.io/issues/15) | `hola@dominio.com` | Nada: no aparece en Contacto ni en el footer |
 
 El mensaje que se abre ya escrito en WhatsApp está en
@@ -45,12 +42,14 @@ El mensaje que se abre ya escrito en WhatsApp está en
 
 ## Imágenes
 
-Las dos se rehacen con el logo, en [#9](https://github.com/rhyon-team/rhyon-team.github.io/issues/9).
+Las dos ya llevan el logo y la tipografía definitiva, pero con el rojo
+provisorio: se regeneran al cerrar
+[#14](https://github.com/rhyon-team/rhyon-team.github.io/issues/14).
 
-| Archivo | Dónde se usa | Formato | Placeholder actual |
+| Archivo | Dónde se usa | Formato | Contenido actual |
 | --- | --- | --- | --- |
-| `public/og-image.png` | Preview al compartir (WhatsApp, LinkedIn, X). `site.ogImage` en `src/lib/site.ts`. | PNG o JPG, **1200×630**, < 300 KB | "RHYON" y "Software · IA · Consultoría" sobre crema, con una barra roja abajo |
-| `public/favicon.svg` | Pestaña del navegador y `logo` del JSON-LD (`src/lib/seo.ts`). | SVG cuadrado, legible a 16 px | "R" crema en sans bold sobre un cuadrado rojo Torino |
+| `public/og-image.png` | Preview al compartir (WhatsApp, LinkedIn, X). `site.ogImage` en `src/lib/site.ts`. | PNG o JPG, **1200×630**, < 300 KB | Isotipo, "RHYON" y "Software · IA · Consultoría" sobre crema, con una barra roja abajo |
+| `public/favicon.svg` | Pestaña del navegador y `logo` del JSON-LD (`src/lib/seo.ts`). | SVG cuadrado, legible a 16 px | Isotipo crema sobre un cuadrado rojo Torino |
 
 ### `og-image.png`
 

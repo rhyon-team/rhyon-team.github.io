@@ -101,8 +101,8 @@ puede forzarse con `data-theme="dark"` en `<html>`. El sitio nace en claro.
 
 ### Tipografía
 
-- **Plus Jakarta Sans** para títulos — sans geométrica, **provisoria** hasta confirmar
-  la tipografía de la marca (ver [docs/placeholders.md](./docs/placeholders.md)).
+- **Sora** para títulos — sans geométrica y ancha, con terminaciones rectas que
+  acompañan al isotipo.
 - **Inter** para texto — legible en tamaños chicos y párrafos largos.
 
 Ambas se sirven desde el propio dominio vía `@fontsource`, no desde un CDN
