@@ -40,6 +40,12 @@ El mensaje que se abre ya escrito en WhatsApp está en
 | --- | --- | --- | --- |
 | Nombre, descripción y enlace | [#16](https://github.com/rhyon-team/rhyon-team.github.io/issues/16) | "Producto propio · Próximamente", sin nombre | `src/components/secciones/Producto.astro` |
 
+## Proyectos
+
+| Falta | Issue | Qué se usa mientras tanto | Dónde vive |
+| --- | --- | --- | --- |
+| Descripción del CRM validada con UrbanRise | [#26](https://github.com/rhyon-team/rhyon-team.github.io/issues/26) | Una descripción redactada a partir de lo que suele hacer un CRM | `src/components/secciones/Proyectos.astro` |
+
 ## Imágenes
 
 Las dos ya llevan el logo y la tipografía definitiva, pero con el rojo
