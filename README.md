@@ -129,7 +129,7 @@ buscadores y del sitemap.
 ├── public/                     Servido tal cual (favicon, robots.txt, imágenes)
 ├── src/
 │   ├── components/
-│   │   ├── layout/             Header, Footer, MobileNav (isla React)
+│   │   ├── layout/             Header, Footer, MobileNav (isla React), WhatsAppFlotante
 │   │   ├── primitives/         Button, Card, Container, Eyebrow, Heading, Section
 │   │   ├── secciones/          Secciones de la home (Hero, Clientes, Servicios…)
 │   │   └── seo/                SEO (meta tags + JSON-LD)

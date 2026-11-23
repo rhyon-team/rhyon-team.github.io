@@ -124,7 +124,7 @@ primer viewport.
 ```
 src/
 ├── components/
-│   ├── layout/       Header, Footer, MobileNav
+│   ├── layout/       Header, Footer, MobileNav, WhatsAppFlotante
 │   ├── primitives/   Button, Card, Container, Eyebrow, Heading, Section
 │   ├── secciones/    Secciones de la home (Hero, Clientes, Servicios…)
 │   └── seo/          SEO

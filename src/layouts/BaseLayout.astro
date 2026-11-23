@@ -2,6 +2,7 @@
 import SEO from '../components/seo/SEO.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import WhatsAppFlotante from '../components/layout/WhatsAppFlotante.astro';
 import { site } from '../lib/site';
 import '../styles/global.css';
 
@@ -41,5 +42,6 @@ const { title, description, image, noindex, bare = false } = Astro.props;
     </main>
 
     {!bare && <Footer />}
+    {!bare && <WhatsAppFlotante />}
   </body>
 </html>
