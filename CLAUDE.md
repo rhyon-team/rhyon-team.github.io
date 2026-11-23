@@ -61,7 +61,7 @@ sus pasos; el PR que lo resuelve lleva `Closes #N` en la descripción.
 | `src/styles/global.css` | Capa semántica, estilos base, accesibilidad |
 | `src/components/primitives/` | Button, Card, Container, Eyebrow, Heading, Section |
 | `src/components/secciones/` | Secciones de la home, en orden en `pages/index.astro` |
-| `src/components/layout/` | Header, Footer, MobileNav              |
+| `src/components/layout/` | Header, Footer, MobileNav, WhatsAppFlotante |
 | `src/lib/site.ts`     | Nombre, contacto, navegación, redes           |
 | `/styleguide`         | Referencia viva del sistema de diseño         |
 | `docs/placeholders.md` | Colores, contacto e imágenes provisorias |

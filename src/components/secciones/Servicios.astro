@@ -8,27 +8,42 @@ import Card from '../primitives/Card.astro';
 interface Servicio {
   titulo: string;
   descripcion: string;
-  etiquetas: string[];
+  incluye: string[];
 }
 
 const servicios: Servicio[] = [
   {
     titulo: 'Software a medida',
     descripcion:
-      'Apps, plataformas y sistemas internos diseñados alrededor de cómo trabaja tu negocio, no al revés. Sumamos IA donde ahorra tiempo de verdad.',
-    etiquetas: ['Apps', 'Plataformas', 'Sistemas internos'],
+      'Desarrollamos sistemas, plataformas y aplicaciones adaptados a los procesos de cada organización. Incorporamos inteligencia artificial donde aporta eficiencia concreta.',
+    incluye: [
+      'Relevamiento de procesos y requerimientos',
+      'Diseño y desarrollo a medida',
+      'Integración con los sistemas existentes',
+      'Soporte y mantenimiento evolutivo',
+    ],
   },
   {
     titulo: 'Integración y automatización',
     descripcion:
-      'Conectamos tu CRM, tu mensajería y tu gestión para que la información fluya sola. Menos pasos manuales, más continuidad.',
-    etiquetas: ['CRM', 'Mensajería', 'Gestión'],
+      'Conectamos las herramientas de la organización, como CRM, mensajería y gestión, para que la información circule sin tareas manuales.',
+    incluye: [
+      'Integración entre plataformas y APIs',
+      'Automatización de procesos repetitivos',
+      'Sincronización de datos entre sistemas',
+      'Automatizaciones con IA cuando corresponde',
+    ],
   },
   {
     titulo: 'Primera versión',
     descripcion:
-      'Llevamos tu idea a una primera versión funcional para probarla con usuarios reales. Probá, aprendé y evolucioná con datos, no con suposiciones.',
-    etiquetas: ['MVP', 'Prototipos', 'Validación'],
+      'Llevamos una idea a una primera versión funcional para validarla con usuarios reales antes de invertir en el producto completo.',
+    incluye: [
+      'Definición del alcance esencial',
+      'Prototipo funcional en plazos acotados',
+      'Pruebas con usuarios reales',
+      'Plan de evolución según los resultados',
+    ],
   },
 ];
 ---
@@ -39,12 +54,26 @@ const servicios: Servicio[] = [
     <Heading as="h2" class="mt-4">
       Qué hacemos
     </Heading>
-    <ul class="mt-12 grid gap-6 md:grid-cols-3">
+    {/* Con subgrid, las tres tarjetas comparten filas: titulo, descripcion e
+        "Incluye" quedan alineados aunque los textos tengan largos distintos. */}
+    <ul class="mt-12 grid gap-6 md:grid-cols-3 md:gap-y-0">
       {servicios.map((servicio) => (
-        <Card as="li" class="flex flex-col">
+        <Card as="li" class="flex flex-col md:row-span-3 md:grid md:grid-rows-subgrid">
           <h3 class="text-xl">{servicio.titulo}</h3>
-          <p class="text-content-muted mt-3">{servicio.descripcion}</p>
-          <p class="text-accent mt-auto pt-6 text-sm">{servicio.etiquetas.join(' · ')}</p>
+          <p class="text-content-muted mt-3 mb-6">{servicio.descripcion}</p>
+          <div class="border-line border-t pt-6">
+            <p class="text-content text-sm font-medium">Incluye</p>
+            <ul class="text-content-muted mt-3 space-y-2 text-sm">
+              {servicio.incluye.map((item) => (
+                <li class="flex gap-2">
+                  <span class="text-accent" aria-hidden="true">
+                    —
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Card>
       ))}
     </ul>

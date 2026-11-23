@@ -4,19 +4,21 @@ import Container from '../primitives/Container.astro';
 import Heading from '../primitives/Heading.astro';
 import Button from '../primitives/Button.astro';
 import { contact, social } from '../../lib/site';
+import { obtenerEnlaceWhatsApp } from '../../lib/whatsapp';
 
 interface Canal {
   etiqueta: string;
   href: string;
 }
 
-const enlaceWhatsApp = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`;
-
 // En orden de preferencia: el primero con datos se muestra como boton
 // principal. Los vacios se descartan, asi la seccion funciona con los datos
 // que haya.
 const canales: Canal[] = [
-  { etiqueta: 'Escribinos por WhatsApp', href: contact.whatsapp ? enlaceWhatsApp : '' },
+  {
+    etiqueta: 'Escribinos por WhatsApp',
+    href: contact.whatsapp ? obtenerEnlaceWhatsApp() : '',
+  },
   { etiqueta: 'Mandanos un email', href: contact.email ? `mailto:${contact.email}` : '' },
   { etiqueta: 'Escribinos por Instagram', href: social.instagram },
 ].filter((canal) => canal.href.length > 0);
