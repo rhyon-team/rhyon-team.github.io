@@ -65,6 +65,13 @@
   --color-warning: #a06a12;
   --color-warning-soft: #fbf0dc;
 
+  /* Verde de WhatsApp para el boton flotante. No es el #25d366 oficial: ese
+     da 2:1 con el icono blanco y contra la crema, y un control necesita 3:1.
+     Este se sigue reconociendo y pasa 3:1 en los fondos del sitio. */
+  --color-whatsapp: #1a9e50;
+  --color-whatsapp-hover: #178f48;
+  --color-whatsapp-content: #ffffff;
+
   /* ------------------------------------------------------------------------
      TIPOGRAFIA
      ------------------------------------------------------------------------
